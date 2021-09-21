@@ -6,7 +6,6 @@ import { ComponentComponent } from './component/component.component';
 import { PipePipe } from './pipe.pipe';
 import { DirectiveDirective } from './directive.directive';
 import { ContentCardComponent } from './content-card/content-card.component';
-import { TestcomponentComponent } from './testcomponent/testcomponent.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +14,6 @@ import { TestcomponentComponent } from './testcomponent/testcomponent.component'
     PipePipe,
     DirectiveDirective,
     ContentCardComponent,
-    TestcomponentComponent
   ],
   imports: [
     BrowserModule
