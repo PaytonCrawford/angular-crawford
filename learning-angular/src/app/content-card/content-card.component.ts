@@ -13,16 +13,14 @@ import { ContentList } from 'helper-files/content-interface';
 })
 export class ContentCardComponent implements OnInit {
 
-  constructor() { }
+  content: ContentList;
+  constructor() {
+
+  }
 
   ngOnInit(): void {
-
-    let contentItem: ContentList = {
-      id: 1,
-      author: "Payton",
-      title: "Test Title"
+    this.content = {
+      name: "Payton Crawford"
     }
-
-
   }
 }
