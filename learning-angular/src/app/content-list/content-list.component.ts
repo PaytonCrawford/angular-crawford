@@ -9,7 +9,6 @@ export class ContentListComponent implements OnInit {
 
   contentArray: Content[];
 
-
   constructor() {
     this.contentArray = [{
       id: 1,
