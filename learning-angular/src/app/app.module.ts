@@ -6,6 +6,7 @@ import { ComponentComponent } from './component/component.component';
 import { PipePipe } from './pipe.pipe';
 import { DirectiveDirective } from './directive.directive';
 import { ContentCardComponent } from './content-card/content-card.component';
+import { ContentListComponent } from './content-list/content-list.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ContentCardComponent } from './content-card/content-card.component';
     PipePipe,
     DirectiveDirective,
     ContentCardComponent,
+    ContentListComponent,
   ],
   imports: [
     BrowserModule

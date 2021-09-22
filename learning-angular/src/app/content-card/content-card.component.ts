@@ -1,7 +1,5 @@
-// @ts-ignore
 import {Component, Input, OnInit} from '@angular/core';
-// @ts-ignore
-import { ContentList } from 'helper-files/content-interface';
+//import { ContentList } from 'helper-files/content-interface';
 
 
 
