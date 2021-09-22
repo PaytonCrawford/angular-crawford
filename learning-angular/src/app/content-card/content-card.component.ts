@@ -17,8 +17,7 @@ export class ContentCardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.content = {
-      name: "Payton Crawford"
-    }
+
   }
+
 }
