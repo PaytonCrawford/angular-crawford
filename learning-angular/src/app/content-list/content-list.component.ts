@@ -25,23 +25,25 @@ export class ContentListComponent implements OnInit {
     }, {
       id: 3,
       author: "Payton",
-      title: "The Life Of Payton",
-      imgUrl: "https://cdn.pixabay.com/photo/2016/11/22/23/30/american-football-1851168_960_720.jpg",
-      body: "Pretty boring..."
+      title: "Hockey",
+      imgUrl: "https://cdn.pixabay.com/photo/2017/03/28/02/17/hockey-2180834_960_720.jpg",
+      body: "Hockey is played on ice."
     }, {
       id: 4,
       author: "Payton",
-      title: "The Life Of Payton",
+      title: "Baseball",
+      imgUrl: "https://cdn.pixabay.com/photo/2016/05/22/01/38/hit-1407826_960_720.jpg",
       body: "Pretty boring..."
     }, {
       id: 5,
       author: "Payton",
-      title: "The Life Of Payton",
-      body: "Pretty boring..."
+      title: "Golf",
+      imgUrl: "https://cdn.pixabay.com/photo/2013/02/09/13/39/tiger-woods-79694_960_720.jpg",
+      body: "The best sport in the world."
     }]
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
 
   }
 
