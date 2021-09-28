@@ -1,6 +1,9 @@
-
-{{content.id}}
-{{content.author}}
-{{content.title}}
-{{content.imgUrl}}
-{{content.body}}
+<html>
+  <body>
+    <h1>{{content.id}}, {{content.title}}</h1>
+    <h2>{{content.title}}</h2>
+    <img [src]="content.imgUrl" alt="image">
+    <h3>{{content.body}}</h3>
+    {{content.author}}
+  </body>
+</html>
