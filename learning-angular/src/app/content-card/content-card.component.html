@@ -3,7 +3,7 @@
   <body class="card-content">
     <h1>{{content.id}}, {{content.title}}</h1>
     <h2>{{content.type}}</h2>
-    <img [src]="content.imgUrl" alt="image" width="400" height="300">
+    <img [src]="content.imgUrl" (click)="ImageClick()"  alt="image" width="400" height="300">
     <h3>{{content.body}}</h3>
     {{content.author}}
   </body>

@@ -18,4 +18,8 @@ export class ContentCardComponent implements OnInit {
 
   }
 
+  ImageClick() {
+    console.log(this.content.id)
+  }
+
 }
