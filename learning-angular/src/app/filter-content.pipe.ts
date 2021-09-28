@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterContentPipe implements PipeTransform {
 
-  transform(contentArray: Content[]) {
-    return contentArray.filter(c => c.type != null ? c.type.length : null);
+  transform(contentItem: Content, type: string): string {
+    return contentItem.type || type || "Default Type";
   }
 
 }
