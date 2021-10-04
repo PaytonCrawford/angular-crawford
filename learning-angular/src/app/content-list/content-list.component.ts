@@ -7,10 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentListComponent implements OnInit {
 
-  contentArray: Content[];
-
-  constructor() {
-    this.contentArray = [{
+    contentArray = [{
       id: 1,
       author: "Payton Crawford",
       title: "Basketball",
@@ -46,6 +43,8 @@ export class ContentListComponent implements OnInit {
       imgUrl: "https://cdn.pixabay.com/photo/2013/02/09/13/39/tiger-woods-79694_960_720.jpg",
       body: "The best sport in the world."
     }]
+  constructor() {
+      
   }
 
   public ngOnInit(): void {

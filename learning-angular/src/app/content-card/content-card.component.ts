@@ -11,7 +11,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ContentCardComponent implements OnInit {
   @Input() content: any;
   constructor() {
-
+    this.content = {}
   }
 
   ngOnInit(): void {
