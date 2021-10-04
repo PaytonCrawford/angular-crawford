@@ -5,7 +5,9 @@
     <img [src]="content.imgUrl" (click)="ImageClick()"  alt="image" width="400" height="300">
     <h3>{{content.body}}</h3>
     {{content.author}}
-    <h4>{{content | filterContent: "This sport is of an undefined type."}}</h4>
+    <div>
+      <h4> Type: {{content | filterContent: "This sport is of an undefined type."}}</h4>
+    </div>
   </body>
 </html>
 
