@@ -1,2 +1,2 @@
 <app-content-card *ngFor=" let content of contentArray" [content]="content"></app-content-card>
-
+<app-content-card *ngFor="let content of (contentArray | filterContent)" [content]="content"></app-content-card>
