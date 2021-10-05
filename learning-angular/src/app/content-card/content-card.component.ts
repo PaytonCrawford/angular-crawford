@@ -22,10 +22,5 @@ export class ContentCardComponent implements OnInit {
     console.log(this.content.id)
   }
 
-  CheckContent(input: string): void {
-    if(this.content.title == input) {
-      console.log(this.content.title)
-    }
-  }
 
 }
