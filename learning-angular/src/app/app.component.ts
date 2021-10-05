@@ -52,6 +52,7 @@ export class AppComponent implements OnInit {
       console.log("There was a match! " + input + " was found.")
     } else {
       console.log("Sorry! " + input + " was not found.")
+
     }
   }
 
