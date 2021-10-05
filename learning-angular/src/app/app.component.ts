@@ -16,6 +16,8 @@ export class AppComponent implements OnInit {
     }]
   }
 
-
+  CheckContent() {
+    console.log("Hello")
+  }
 
 }
