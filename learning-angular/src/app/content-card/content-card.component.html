@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<input [(ngModel)]="content"><button (click)="CheckContent()">Check Content</button>
 <html>
   <body class="card-content">
     <h1>{{content.id}}, {{content.title}}</h1>
@@ -6,7 +7,7 @@
     <h3>{{content.body}}</h3>
     {{content.author}}
     <div>
-      <h4> Type: {{content.type | filterContent}}</h4>
+      <h4> Type: {{content | filterContent}}</h4>
     </div>
   </body>
 </html>

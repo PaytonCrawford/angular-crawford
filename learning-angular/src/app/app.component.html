@@ -1,4 +1,1 @@
-<input type="text" id="textBox" name="textBox" placeholder="Enter content item here:"/>
-<button type="button" id="checkContent" name="checkContent" (click)="CheckContent()" value="Check Content">Check Content</button>
-
-<app-content-list></app-content-list>
+<app-content-card *ngFor=" let content of contentArray; last as isLast" [class.is-last]="isLast" [content]="content"></app-content-card>
