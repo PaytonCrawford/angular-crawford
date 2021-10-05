@@ -49,7 +49,9 @@ export class AppComponent implements OnInit {
 
   CheckContent(input: string): void {
     if (this.contentArray.some(title => title.title === input)) {
-      console.log("There was a match! " + this.title + "was found.")
+      console.log("There was a match! " + input + " was found.")
+    } else {
+      console.log("Sorry! " + input + " was not found.")
     }
   }
 
