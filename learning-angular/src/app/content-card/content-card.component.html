@@ -2,7 +2,9 @@
 <html>
   <body class="card-content">
     <h1>{{content.id}}, {{content.title}}</h1>
-    <img [src]="content.imgUrl" (click)="ImageClick()"  alt="image" width="400" height="300">
+      <div *ngIf="content.imgUrl">
+        <img [src]="content.imgUrl" (click)="ImageClick()"  alt="image" width="400" height="300">
+      </div>
     <h3>{{content.body}}</h3>
     {{content.author}}
     <div>
