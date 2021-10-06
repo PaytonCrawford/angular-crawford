@@ -57,6 +57,7 @@ export class AppComponent implements OnInit {
     for (let i = 0; i < this.contentArray.length; i++) {
       if (this.contentArray[i].title === input) {
         console.log("There was a match! " + input + " was found.")
+        break;
       } else {
         console.log("Sorry! " + input + " was not found.")
       }

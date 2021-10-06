@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <body class="card-content">
-    <h1>{{content.id}}, {{content.title}}</h1>
-      <div *ngIf="content.imgUrl">
-        <img [src]="content.imgUrl" (click)="ImageClick()"  alt="image" width="400" height="300">
-      </div>
-    <h3>{{content.body}}</h3>
-    {{content.author}}
+  <h1>{{content.id}}, {{content.title}}</h1>
+    <div *ngIf="content.imgUrl">
+      <img [src]="content.imgUrl" (click)="ImageClick()"  alt="image" width="400" height="300">
+    </div>
+      <h3>{{content.body}}</h3>
+          {{content.author}}
     <div>
-      <h4> Type: {{content | filterContent: 'This is a default type'}}</h4>
+      <h4> Type: {{content.type}}</h4>
     </div>
   </body>
 </html>
