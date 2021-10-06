@@ -41,6 +41,12 @@ export class AppComponent implements OnInit {
   }, {
     id: 5,
     author: "Payton Crawford",
+    title: "Esports",
+    type: "Team Sport",
+    body: "Competitive variety of video games."
+  }, {
+    id: 6,
+    author: "Payton Crawford",
     title: "Golf",
     type: "Individual Sport",
     imgUrl: "https://cdn.pixabay.com/photo/2013/02/09/13/39/tiger-woods-79694_960_720.jpg",
