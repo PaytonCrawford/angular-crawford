@@ -48,7 +48,9 @@ export class AppComponent implements OnInit {
   }]
 
   public ngOnInit() {
-    contentList: [] = [{}]
+    contentList: [] = [{
+
+    }]
   }
 
   CheckContent(input: string): void {
