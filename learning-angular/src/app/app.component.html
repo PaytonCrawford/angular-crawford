@@ -1,4 +1,4 @@
-<input #sport><button (click)="CheckContent(sport.value)">Check Content</button>
-<app-content-card *ngFor=" let sport of contentArray | filterContent: 'Team Sport'; last as isLast" [class.is-last]="isLast" [content]="sport"></app-content-card>
-<app-content-card *ngFor=" let sport of contentArray | filterContent: 'Individual Sport'; last as isLast" [class.is-last]="isLast" [content]="sport"></app-content-card>
+<input #sportType><button (click)="CheckContent(sportType.value)">Check Content</button>
+<app-content-card *ngFor=" let sport of contentArray | filterContent: 'Team Sport'; last as isLast" [class.is-last]="isLast" [content]="sport" class="team"></app-content-card>
+<app-content-card *ngFor=" let sport of contentArray | filterContent: 'Individual Sport'; last as isLast" [class.is-last]="isLast" [content]="sport" class="individual"></app-content-card>
 

@@ -8,3 +8,11 @@
   background-color: lightsteelblue;
 }
 
+:host.individual {
+  border: 5px solid red;
+}
+
+:host.team {
+  border: 5px solid green;
+}
+

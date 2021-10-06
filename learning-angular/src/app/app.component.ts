@@ -47,18 +47,18 @@ export class AppComponent implements OnInit {
     body: "The best sport in the world."
   }]
 
-  CheckContent(input: string): void {
-    if (this.contentArray.some(title => title.title === input)) {
-      console.log("There was a match! " + input + " was found.")
-    } else {
-      console.log("Sorry! " + input + " was not found.")
-    }
+  public ngOnInit() {
+    contentList: [] = [{}]
   }
 
-  public ngOnInit() {
-    contentList: [] = [{
-
-    }]
+  CheckContent(input: string): void {
+    for (let i = 0; i < this.contentArray.length; i++) {
+      if (this.contentArray[i].title === input) {
+        console.log("There was a match! " + input + " was found.")
+      } else {
+        console.log("Sorry! " + input + " was not found.")
+      }
+    }
   }
 
 }

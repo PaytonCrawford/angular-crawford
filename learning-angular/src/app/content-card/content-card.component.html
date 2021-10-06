@@ -8,7 +8,7 @@
     <h3>{{content.body}}</h3>
     {{content.author}}
     <div>
-      <h4> Type: {{content | filterContent}}</h4>
+      <h4> Type: {{content | filterContent: 'This is a default type'}}</h4>
     </div>
   </body>
 </html>
