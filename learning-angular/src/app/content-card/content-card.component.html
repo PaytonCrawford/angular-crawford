@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <body class="card-content">
-  <div appHoverStyle="colour"><h1>{{content.id}}, {{content.title}}</h1></div>
+  <div appHoverStyle><h1>{{content.id}}, {{content.title}}</h1></div>
       <div *ngIf="content.imgUrl else elseCheck">
         <img [src]="content.imgUrl" (click)="ImageClick()"  alt="image" width="400" height="300">
       </div>

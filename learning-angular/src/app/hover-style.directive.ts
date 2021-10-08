@@ -1,24 +1,28 @@
-import {Directive, ElementRef, HostListener} from '@angular/core';
+import {Directive, ElementRef, HostListener, OnInit} from '@angular/core';
 
 @Directive({
   selector: '[appHoverStyle]'
 })
-export class HoverStyleDirective {
+export class HoverStyleDirective implements OnInit {
+
+  constructor(private element: ElementRef) {
+
+  }
+
+  ngOnInit(): void {
+
+  }
 
   @HostListener('mouseenter') onMouseEnter() {
-    this.underline();
+    this.underline('underline')
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-
+    this.underline('none')
   }
 
-  constructor(private element: ElementRef) {
-    element.nativeElement.style.underline
-  }
-
-  private underline() {
-    this.element.nativeElement.style.underline
+  underline(underline: string): void {
+    this.element.nativeElement.style.textDecoration = underline || 'underline';
   }
 
 }
