@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <body class="card-content">
-    {{content.author}}
+  {{content.author}}
       <div appHoverStyle><h1>{{content.id}}, {{content.title}}</h1></div>
       <div *ngIf="content.imgUrl else elseCheck">
         <img [src]="content.imgUrl" (click)="ImageClick()"  alt="image" width="400" height="300">
@@ -9,11 +9,9 @@
       <ng-template #elseCheck>
         <img src="https://media.istockphoto.com/photos/no-image-available-picture-id531302789?b=1&k=20&m=531302789&s=170667a&w=0&h=B2d1v_fE42RuJO9CXfh1TvTrGG3-_TXXDl2L-tpWL8M=" alt="imageDefault" class="defaultImage">
       </ng-template>
-    <h3>{{content.body}}</h3>
-    <h4>Type: {{content.type}}</h4>
-      <div appHoverStyle="bold">
-        <h5>Tags: {{content.tags}}</h5>
-      </div>
+    <h5>{{content.body}}</h5>
+    <h5>Type: {{content.type}}</h5>
+    <h3>Tags:</h3><div appHoverStyle *ngFor="let tag of content.tags">{{tag}}</div>
   </body>
 </html>
 
