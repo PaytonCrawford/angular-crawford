@@ -1,16 +1,18 @@
-import {Directive, ElementRef, HostListener, OnInit} from '@angular/core';
+import {Directive, ElementRef, HostListener, Input} from '@angular/core';
 
 @Directive({
   selector: '[appHoverStyle]'
 })
-export class HoverStyleDirective implements OnInit {
+export class HoverStyleDirective{
 
-  constructor(private element: ElementRef) {
-
-  }
+  @Input() bold: boolean | undefined
 
   ngOnInit(): void {
+    this.element.nativeElement.style.bold = this.bold
+  }
 
+  constructor(private element: ElementRef) {
+    this.element.nativeElement.style.bold = this.bold
   }
 
   @HostListener('mouseenter') onMouseEnter() {
