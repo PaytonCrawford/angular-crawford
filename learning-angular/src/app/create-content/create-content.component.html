@@ -1,1 +1,8 @@
-<p>create-content works!</p>
+<input #sportID>
+<input #sportAuthor>
+<input #sportImage>
+<input #sportName>
+<input #sportBody>
+<button (click)="CreateContent(sportID.id, sportAuthor.value, sportImage.value, sportName.value, sportBody.value)">
+  Create Sport Content Item</button>
+

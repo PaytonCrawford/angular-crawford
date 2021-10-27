@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateContentComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
+
+  }
+
+  CreateContent(id: string, author: string, image: string, name: string, body: string) {
+    let sportPromise = new Promise((success, fail) => {
+      
+    });
   }
 
 }
