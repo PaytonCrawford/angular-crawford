@@ -1,8 +1,23 @@
-<input #sportID>
-<input #sportAuthor>
-<input #sportImage>
-<input #sportName>
-<input #sportBody>
-<button (click)="CreateContent(sportID.value, sportAuthor.value, sportImage.value, sportName.value, sportBody.value)">
+<label>
+  ID:
+  <input #sportID>
+</label>
+<label>
+  Author:
+  <input #sportAuthor>
+</label>
+<label>
+  Type:
+  <input #sportType>
+</label>
+<label>
+  Name:
+  <input #sportName>
+</label>
+<label>
+  Body:
+  <input #sportBody>
+</label>
+<button (click)="CreateContent(sportID.value, sportAuthor.value, sportType.value, sportName.value, sportBody.value)">
   Create Sport Content Item</button>
 

@@ -20,7 +20,7 @@ export class CreateContentComponent implements OnInit {
   @Output() newSportEvent = new EventEmitter<Content>();
   newSportItem: any;
 
-  CreateContent(id: string, author: string, image: string, name: string, body: string): void {
+  CreateContent(id: string, author: string, type: string, name: string, body: string): void {
 
     let getItem = async function () {
       return Promise.resolve("Sports")
@@ -33,7 +33,7 @@ export class CreateContentComponent implements OnInit {
     this.newSportEvent.emit(this.newSportItem)
 
     let sportPromise = new Promise(async (success, fail) => {
-      this.newSportItem(id, author, image, name, body)
+      this.newSportItem(id, author, type, name, body)
       let displayItems = await getAllItems();
       if (displayItems) {
         success("Success, Items Found!");
