@@ -70,8 +70,8 @@ export class ContentListComponent implements OnInit {
     }
   }
 
-  addSportToList(newSportFromChild: Content) {
-    //this.contentArray.push(newSportFromChild);
+  addSportToList(newSportFromChild: any) {
+    this.contentArray.push(newSportFromChild);
     this.contentArray = Object.assign([], this.contentArray)
   }
 

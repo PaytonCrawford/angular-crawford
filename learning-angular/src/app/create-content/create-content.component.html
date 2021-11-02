@@ -1,7 +1,9 @@
+ID:<input #sportID><br>
 Author:<input #sportAuthor><br>
 Type:<input #sportType><br>
 Title:<input #sportTitle><br>
+Image URL:<input #sportURL><br>
 Body:<input #sportBody><br>
-<button (click)="CreateContent(sportAuthor.value, sportType.value, sportTitle.value, sportBody.value)">
+<button (click)="CreateContent(sportID.valueAsNumber, sportAuthor.value, sportTitle.value, sportType.value, sportURL.value, sportBody.value)">
   Create Sport Content Item</button>
 

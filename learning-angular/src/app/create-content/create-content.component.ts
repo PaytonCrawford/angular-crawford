@@ -20,12 +20,14 @@ export class CreateContentComponent implements OnInit {
   @Output() newSportEvent = new EventEmitter<Content>();
   newSportItem!: Content;
 
-  CreateContent(author: string, type: string, title: string, body: string): void {
+  CreateContent(id: number, author: string, title: string, type: string, imgUrl: string, body: string): void {
 
     this.newSportItem = {
+      id: id,
       author: author,
       type: type,
       title: title,
+      imgUrl: imgUrl,
       body: body
     }
 
