@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Content} from "@angular/compiler/src/render3/r3_ast";
 
 @Component({
   selector: 'app-content-list',
@@ -67,6 +68,11 @@ export class ContentListComponent implements OnInit {
         console.log("Sorry! " + input + " was not found.")
       }
     }
+  }
+
+  addSportToList(newSportFromChild: Content) {
+    this.contentArray.push();
+    this.contentArray = Object.assign([], this.contentArray)
   }
 
 }
