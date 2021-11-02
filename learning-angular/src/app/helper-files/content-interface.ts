@@ -1,5 +1,5 @@
-interface Content {
-  id: number;
+export interface Content {
+  id?: number;
   author: string;
   imgUrl?: string;
   type?: string;

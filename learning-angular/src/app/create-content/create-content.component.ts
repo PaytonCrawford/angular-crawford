@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Output, EventEmitter } from "@angular/core";
-import {Content} from "@angular/compiler/src/render3/r3_ast";
+import { Content } from '../helper-files/content-interface';
 
 @Component({
   selector: 'app-create-content',
@@ -18,9 +18,18 @@ export class CreateContentComponent implements OnInit {
   }
 
   @Output() newSportEvent = new EventEmitter<Content>();
-  newSportItem: any;
+  newSportItem!: Content;
 
-  CreateContent(id: string, author: string, type: string, name: string, body: string): void {
+  CreateContent(author: string, type: string, title: string, body: string): void {
+
+    this.newSportItem = {
+      author: author,
+      type: type,
+      title: title,
+      body: body
+    }
+
+    this.newSportEvent.emit(this.newSportItem)
 
     let getItem = async function () {
       return Promise.resolve("Sports")
@@ -30,10 +39,8 @@ export class CreateContentComponent implements OnInit {
       return await Promise.all([getItem()])
     }
 
-    this.newSportEvent.emit(this.newSportItem)
-
     let sportPromise = new Promise(async (success, fail) => {
-      this.newSportItem(id, author, type, name, body)
+      //this.newSportItem(author, type, title, body)
       let displayItems = await getAllItems();
       if (displayItems) {
         success("Success, Items Found!");

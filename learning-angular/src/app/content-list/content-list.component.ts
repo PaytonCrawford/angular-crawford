@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Content} from "@angular/compiler/src/render3/r3_ast";
+import { Content } from '../helper-files/content-interface';
 
 @Component({
   selector: 'app-content-list',
@@ -71,7 +71,7 @@ export class ContentListComponent implements OnInit {
   }
 
   addSportToList(newSportFromChild: Content) {
-    this.contentArray.push();
+    //this.contentArray.push(newSportFromChild);
     this.contentArray = Object.assign([], this.contentArray)
   }
 
