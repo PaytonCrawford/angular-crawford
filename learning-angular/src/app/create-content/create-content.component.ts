@@ -18,13 +18,37 @@ export class CreateContentComponent implements OnInit {
   }
 
   @Output() newSportEvent = new EventEmitter<Content>();
-  newSportItem: Content | undefined;
+  newSportItem: any;
 
-  CreateContent(): void { //id: string, author: string, image: string, name: string, body: string
+  CreateContent(id: string, author: string, image: string, name: string, body: string): void {
+
+    let getItem = async function () {
+      return Promise.resolve("Sports")
+    }
+
+    let getAllItems = async() => {
+      return await Promise.all([getItem()])
+    }
+
     this.newSportEvent.emit(this.newSportItem)
-    let sportPromise = new Promise((success, fail) => {
 
+    let sportPromise = new Promise(async (success, fail) => {
+      this.newSportItem(id, author, image, name, body)
+      let displayItems = await getAllItems();
+      if (displayItems) {
+        success("Success, Items Found!");
+      }
+      else {
+        fail("Fail, Items Not Found.");
+      }
     });
+
+    sportPromise.then(function (successResult) {
+      console.log("Success, Items Found! - Success Method ", successResult)
+    }).catch(failure => {
+      console.log("Failure, Items Not Found! ", failure)
+    })
+
   }
 
 }

@@ -76,17 +76,10 @@ export class AppComponent implements OnInit {
     }
   }
 
-  addSportToList() {
-    this.contentArray.push({
-      author: "THIS IS A TEST CREATED ITEM USING PROMISES",
-      body: "THIS IS A TEST CREATED ITEM USING PROMISES",
-      id: 8,
-      imgUrl: "",
-      tags: [],
-      title: "THIS IS A TEST CREATED ITEM USING PROMISES",
-      type: "THIS IS A TEST CREATED ITEM USING PROMISES"
-    });
-    this.contentArray = Object.assign([], this.contentArray);
+  addSportToList(newSportFromChild: Content) {
+    //@ts-ignore
+    this.contentArray.push(newSportFromChild);
+    this.contentArray = Object.assign([], this.contentArray)
   }
 
 }
