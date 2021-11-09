@@ -15,11 +15,15 @@ export class ContentService {
   }
 
   getContent() : Observable<Content[]>{
-    return this.http.get<Content[]>("api/content");
+    return this.http.get<Content[]>("api/CONTENT");
   }
 
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-type': 'application/json' })
   };
+
+  addContent(content: Content): Observable<Content>{
+    return this.http.post<Content>("api/content", content, this.httpOptions);
+  }
 
 }
