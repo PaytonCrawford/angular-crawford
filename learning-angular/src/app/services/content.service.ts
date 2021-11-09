@@ -18,4 +18,8 @@ export class ContentService {
     return this.http.get<Content[]>("api/content");
   }
 
+  private httpOptions = {
+    headers: new HttpHeaders({ 'Content-type': 'application/json' })
+  };
+
 }

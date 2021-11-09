@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   }
 
   public ngOnInit() {
-    this.contentService.getContentObs().subscribe(sportService => this.sportService = sportService);
+    this.contentService.getContent().subscribe(sportService => this.sportService = sportService);
   }
 
   CheckContent(input: string): void {
