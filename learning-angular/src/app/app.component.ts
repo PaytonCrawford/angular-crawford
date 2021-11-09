@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ContentCardComponent} from "./content-card/content-card.component";
-import {Content} from "@angular/compiler/src/render3/r3_ast";
+import { Content } from "./helper-files/content-interface"
+import { ContentService } from './services/content.service';
 
 @Component({
   selector: 'app-root',
@@ -59,10 +60,11 @@ export class AppComponent implements OnInit {
     tags: ["FORE!", " Tiger Woods", " Club", " Fairway"]
   }]
 
-  public ngOnInit() {
-    contentList: [] = [{
+  public constructor(private contentService: ContentService) {
+  }
 
-    }]
+  public ngOnInit() {
+
   }
 
   CheckContent(input: string): void {
