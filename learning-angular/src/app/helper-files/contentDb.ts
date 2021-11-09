@@ -41,4 +41,4 @@ export const CONTENT: Content[] = [{
     type: "Individual Sport",
     imgUrl: "https://cdn.pixabay.com/photo/2013/02/09/13/39/tiger-woods-79694_960_720.jpg",
     body: "The best sport in the world."
-  }]
+  }];
