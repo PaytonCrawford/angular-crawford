@@ -35,6 +35,13 @@ export class AppComponent implements OnInit {
     this.contentService.addContent(this.contentItem).subscribe(content => this.sportContent.push(content));
   }
 
+  update(): void {
+    this.contentService.updateContent(this.contentItem).subscribe(() => {
+      console.log("Content Updated!")
+      //Insert Message Service!!!
+    })
+  }
+
   CheckContent(input: string): void {
     for (let i = 0; i < this.sportContent.length; i++) {
       if (this.sportContent[i].title === input) {
