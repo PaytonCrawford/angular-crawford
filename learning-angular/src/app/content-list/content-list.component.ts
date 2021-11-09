@@ -9,13 +9,14 @@ import {Content} from "../helper-files/content-interface";
 })
 export class ContentListComponent implements OnInit {
 
+  public title = "learning-angular :)"
+
   sportService: Content[] = [];
 
-  constructor(private contentService: ContentService) {
-
+  public constructor(private contentService: ContentService) {
   }
 
-  public ngOnInit(): void {
+  public ngOnInit() {
     this.contentService.getContentObs().subscribe(sportService => this.sportService = sportService);
   }
 

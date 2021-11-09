@@ -10,7 +10,7 @@ import { ContentService } from './services/content.service';
 })
 export class AppComponent implements OnInit {
 
-  public contentItems = this.contentService.getContent();
+  public title = "learning-angular :)"
 
   sportService: Content[] = [];
 
