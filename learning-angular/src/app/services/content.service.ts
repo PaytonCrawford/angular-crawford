@@ -4,26 +4,40 @@ import {Observable, of} from "rxjs";
 import { MessageService } from "./message.service";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class ContentService {
 
-  constructor(private http: HttpClient) {
+  sportContent: Content[] = [];
 
+  contentItem = {
+    id: 7,
+    author: "TEST ITEM",
+    title: "TEST ITEM",
+    type: "TEST ITEM",
+    body: "TEST ITEM",
+    tags: ["TEST ITEM", "TEST ITEM"]
   }
 
-  getContent() : Observable<Content[]>{
-    return this.http.get<Content[]>("api/CONTENT");
+  constructor(private http: HttpClient, private contentService: ContentService) {
+
   }
 
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-type': 'application/json' })
   };
 
+  getContent() : Observable<Content[]>{
+    return this.http.get<Content[]>("api/CONTENT");
+  }
+
   addContent(content: Content): Observable<Content>{
-    return this.http.post<Content>("api/content", content, this.httpOptions);
+    return this.http.post<Content>("api/CONTENT", content, this.httpOptions);
+  }
+
+  updateContent(content: Content): Observable<any>{
+    return this.http.put("api/CONTENT", content, this.httpOptions);
   }
 
 }

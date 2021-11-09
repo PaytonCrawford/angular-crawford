@@ -12,18 +12,32 @@ export class AppComponent implements OnInit {
 
   public title = "learning-angular :)"
 
-  sportService: Content[] = [];
+  sportContent: Content[] = [];
+
+  contentItem = {
+    id: 7,
+    author: "TEST ITEM",
+    title: "TEST ITEM",
+    type: "TEST ITEM",
+    body: "TEST ITEM",
+    tags: ["TEST ITEM", "TEST ITEM"]
+  }
 
   public constructor(private contentService: ContentService) {
   }
 
   public ngOnInit() {
-    this.contentService.getContent().subscribe(sportService => this.sportService = sportService);
+    this.contentService.getContent().subscribe(sportService => this.sportContent = sportService);
+  }
+
+  save(): void {
+    //Insert Message Service!!!
+    this.contentService.addContent(this.contentItem).subscribe(content => this.sportContent.push(content));
   }
 
   CheckContent(input: string): void {
-    for (let i = 0; i < this.sportService.length; i++) {
-      if (this.sportService[i].title === input) {
+    for (let i = 0; i < this.sportContent.length; i++) {
+      if (this.sportContent[i].title === input) {
         console.log("There was a match! " + input + " was found.")
         break;
       } else {

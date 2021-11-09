@@ -9,7 +9,7 @@ export class MessageService {
 
   add(message: string) {
     this.messages.push(message)
-    console.log("Content Retrieved!")
+    console.log("Content Item Successfully Added!")
   }
 
   clear() {
