@@ -9,7 +9,8 @@ import { ContentService } from './services/content.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  public title = 'learning-angular';
+
+  public contentItems = this.contentService.getContent();
 
   sportService: Content[] = [];
 
