@@ -63,7 +63,7 @@ export class InMemoryDataService implements InMemoryDbService {
     return {CONTENT};
   }
 
-  genId(content: Content[]): number {
+  getId(content: Content[]): number {
     return content.length > 0 ? Math.max(...content.map(contentItem => contentItem.id ?? 0)) + 1 : 0;
   }
 
