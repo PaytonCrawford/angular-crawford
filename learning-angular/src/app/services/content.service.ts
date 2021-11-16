@@ -9,17 +9,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ContentService {
 
-  sportContent: Content[] = [];
-
-  contentItem = {
-    id: 7,
-    author: "TEST ITEM",
-    title: "TEST ITEM",
-    type: "TEST ITEM",
-    body: "TEST ITEM",
-    tags: ["TEST ITEM", "TEST ITEM"]
-  }
-
   constructor(private http: HttpClient, private contentService: ContentService) {
 
   }
@@ -28,7 +17,7 @@ export class ContentService {
     headers: new HttpHeaders({ 'Content-type': 'application/json' })
   };
 
-  getContent() : Observable<Content[]>{
+  getContent() : Observable<Content[]> {
     return this.http.get<Content[]>("api/CONTENT");
   }
 
