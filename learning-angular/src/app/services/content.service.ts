@@ -9,8 +9,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ContentService {
 
-  sportContent: Content[] = [];
-
   contentItem = {
     id: 7,
     author: "TEST ITEM",
@@ -20,7 +18,7 @@ export class ContentService {
     tags: ["TEST ITEM", "TEST ITEM"]
   }
 
-  constructor(private http: HttpClient, private contentService: ContentService) {
+  constructor(private messageService: MessageService, private http: HttpClient) {
 
   }
 
@@ -29,15 +27,18 @@ export class ContentService {
   };
 
   getContent() : Observable<Content[]>{
+    this.messageService.add("Content Retrieved!");
     return this.http.get<Content[]>("api/CONTENT");
   }
 
-  addContent(content: Content): Observable<Content>{
-    return this.http.post<Content>("api/CONTENT", content, this.httpOptions);
+  postContent(newContent: Content): Observable<Content>{
+    this.messageService.add("Content Added!");
+    return this.http.post<Content>("api/CONTENT", newContent, this.httpOptions);
   }
 
-  updateContent(content: Content): Observable<any> {
-    return this.http.put("api/CONTENT", content, this.httpOptions);
+  putContent(newContent: Content): Observable<any> {
+    this.messageService.add("Content Added!");
+    return this.http.put("api/CONTENT", newContent, this.httpOptions);
   }
 
 }

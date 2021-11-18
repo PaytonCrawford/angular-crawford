@@ -25,13 +25,25 @@ export class ContentListComponent implements OnInit {
   public constructor(private contentService: ContentService) {
   }
 
-  public ngOnInit() {
-    this.contentService.getContent().subscribe(sportService => this.sportContent = sportService);
+  ngOnInit(): void {
+    this.getContent();
   }
 
-  save(): void {
-    //Insert Message Service!!!
-    this.contentService.addContent(this.contentItem).subscribe(content => this.sportContent.push(content));
+  getContent(): void {
+    this.contentService.getContent().subscribe(contentList => {
+      this.sportContent = contentList;
+    });
+  }
+
+  addSportToList(newSport: any): void {
+    this.sportContent.push(newSport)
+    this.sportContent = [...this.sportContent];
+  }
+
+  updateSportList(newSport: any): void {
+    let sportIndex = this.sportContent.map(e => e.id).indexOf(newSport.id)
+    this.sportContent[sportIndex] = newSport;
+    this.sportContent = [...this.sportContent];
   }
 
   CheckContent(input: string): void {

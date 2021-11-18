@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Content} from "../helper-files/content-interface";
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +10,7 @@ export class InMemoryDataService implements InMemoryDbService {
   constructor() { }
 
   createDb() {
-    const CONTENT: Content[] = [{
+    const CONTENT = [{
       id: 1,
       author: "Payton Crawford",
       title: "Basketball",
