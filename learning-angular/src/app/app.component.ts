@@ -36,6 +36,7 @@ export class AppComponent implements OnInit {
   }
 
   update(): void {
+    this.sportContent[this.contentItem.id || 1] = this.contentItem;
     this.contentService.updateContent(this.contentItem).subscribe(() => {
       console.log("Content Updated!")
       //Insert Message Service!!!
