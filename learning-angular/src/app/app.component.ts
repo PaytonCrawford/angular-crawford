@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ContentCardComponent} from "./content-card/content-card.component";
 import { Content } from "./helper-files/content-interface"
 import { ContentService } from './services/content.service';
+import {MessageService} from "./services/message.service";
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,14 @@ export class AppComponent implements OnInit {
     tags: ["TEST ITEM", "TEST ITEM"]
   }
 
-  public constructor(private contentService: ContentService) {
+  constructor(private contentService: ContentService, private messageService: MessageService) {
+    this.newContent = {
+      author: '',
+      title: '',
+      body: '',
+      type: '',
+      tags: ['']
+    };
   }
 
   public ngOnInit() {
@@ -52,6 +60,46 @@ export class AppComponent implements OnInit {
         console.log("Sorry! " + input + " was not found.")
       }
     }
+  }
+
+  @Output() addContentEvent = new EventEmitter<Content>();
+  @Output() updateContentEvent = new EventEmitter<Content>();
+  newContent: Content;
+  tempId!: string;
+  tempTags!: string;
+
+  addSport(): void {
+    this.newContent.tags = this.tempTags.split(",");
+    this.contentService.postContent(this.newContent).subscribe(newSport => {
+      this.messageService.add("Added sport content has the ID of: " + newSport.id);
+      this.newContent = {
+        author: '',
+        title: '',
+        body: '',
+        type: '',
+        tags: ['']
+      };
+      this.tempTags = "";
+      this.addContentEvent.emit(newSport)
+    });
+  }
+
+  updateSport(): void {
+    this.newContent.tags = this.tempTags.split(",");
+    this.newContent.id = parseInt(this.tempId);
+    this.contentService.postContent(this.newContent).subscribe(() => {
+      this.messageService.add("Updated sport content at id: " + this.newContent.id);
+      this.tempTags = "";
+      this.tempId = "";
+      this.updateContentEvent.emit(this.newContent);
+      this.newContent = {
+        author: '',
+        title: '',
+        body: '',
+        type: '',
+        tags: ['']
+      };
+    });
   }
 
 }
