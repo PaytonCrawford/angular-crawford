@@ -7,12 +7,15 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 //Imports and Themes
-$my-sport-theme-primary: mat.$amber-palette;
-$my-sport-theme-accent: mat.$blue-gray-palette;
-$my-sport-theme-warn: mat.$red-palette;
-$my-theme: mat.define-dark-theme(
-  $my-sport-theme-primary
-  $my-sport-theme-accent
-  $my-sport-theme-warn
-);
-@include angular-material-theme($my-theme);
+$my-sport-theme-primary: mat.define-palette(mat.$amber-palette);
+$my-sport-theme-accent: mat.define-palette(mat.$blue-gray-palette);
+$my-sport-theme-warn: mat.define-palette(mat.$red-palette);
+$my-theme: mat.define-dark-theme((
+color: (
+  primary: $my-sport-theme-primary,
+  accent: $my-sport-theme-accent,
+  warn: $my-sport-theme-warn,
+)
+));
+@include mat.core-theme($my-theme);
+@include mat.button-theme($my-theme);
