@@ -2,9 +2,6 @@
 @use '~@angular/material' as mat;
 @include mat.core();
 @import '~@angular/material/theming';
-//Default Style and Theme
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 //Imports and Themes
 $my-sport-theme-primary: mat.define-palette(mat.$amber-palette, 500);
