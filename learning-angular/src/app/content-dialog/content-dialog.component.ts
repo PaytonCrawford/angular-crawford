@@ -46,7 +46,6 @@ export class ContentDialogComponent implements OnInit {
       };
       this.tempTags = "";
       this.addContentEvent.emit(newSport)
-      this.dialogRef.close(this.form.value);
     });
   }
 
