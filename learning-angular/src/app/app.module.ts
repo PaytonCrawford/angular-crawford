@@ -16,6 +16,8 @@ import { InMemoryDataService } from "./services/in-memory-data.service";
 import { CreateComponent } from './create/create.component';
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,8 +39,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         }),
       FormsModule,
       BrowserAnimationsModule,
+      MatButtonModule,
+      MatInputModule
     ],
   providers: [],
+  entryComponents: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

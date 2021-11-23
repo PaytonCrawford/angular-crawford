@@ -1,39 +1,42 @@
-<div>
-  <label>
-    Id: <input [(ngModel)]="tempId">
-  </label>c
-</div>
-<div>
-  <label>
-    Author: <input [(ngModel)]="newContent.author">
-  </label>
-</div>
-<div>
-  <label>
-    imgUrl: <input [(ngModel)]="newContent.imgUrl">
-  </label>
-</div>
-<div>
-  <label>
-    Type: <input [(ngModel)]="newContent.type">
-  </label>
-</div>
-<div>
-  <label>
-    Title: <input [(ngModel)]="newContent.title">
-  </label>
-</div>
-<div>
-  <label>
-    Body: <input [(ngModel)]="newContent.body">
-  </label>
-</div>
-<div>
-  <label>
-    Tags: <input [(ngModel)]="tempTags">
-  </label>
-</div>
-<div>
-  <button (click)="addSport()">Add Sport</button>
-  <button (click)="updateSport()">Update Sport</button>
-</div>
+<mat-form-field>
+  <div>
+    <label>
+      Id: <input [(ngModel)]="tempId">
+    </label>
+  </div>
+  <div>
+    <label>
+      Author: <input [(ngModel)]="newContent.author">
+    </label>
+  </div>
+  <div>
+    <label>
+      imgUrl: <input [(ngModel)]="newContent.imgUrl">
+    </label>
+  </div>
+  <div>
+    <label>
+      Type: <input [(ngModel)]="newContent.type">
+    </label>
+  </div>
+  <div>
+    <label>
+      Title: <input [(ngModel)]="newContent.title">
+    </label>
+  </div>
+  <div>
+    <label>
+      Body: <input [(ngModel)]="newContent.body">
+    </label>
+  </div>
+  <div>
+    <label>
+      Tags: <input [(ngModel)]="tempTags">
+    </label>
+  </div>
+
+  <div>
+    <button mat-raised-button color="primary" (click)="addSport()">Add Sport</button>
+    <button mat-raised-button color="primary" (click)="updateSport()">Update Sport</button>
+  </div>
+</mat-form-field>
