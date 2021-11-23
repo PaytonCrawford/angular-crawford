@@ -1,8 +1,8 @@
 <input #sportType><button (click)="CheckContent(sportType.value)">Check Content</button>
 <app-create (addContentEvent)="addSportToList($event)" (updateContentEvent)="updateSportList($event)"></app-create>
-<!--
-<app-content-card *ngFor=" let sport of sportContent | filterContent: 'Team Sport'; last as isLast" [class.is-last]="isLast" [content]="sport" class="team"></app-content-card>
-<app-content-card *ngFor=" let sport of sportContent | filterContent: 'Individual Sport'; last as isLast" [class.is-last]="isLast" [content]="sport" class="individual"></app-content-card>
--->
+
+<!--<app-content-card *ngFor=" let sport of sportContent | filterContent: 'Team Sport'; last as isLast" [class.is-last]="isLast" [content]="sport" class="team"></app-content-card>-->
+<!--<app-content-card *ngFor=" let sport of sportContent | filterContent: 'Individual Sport'; last as isLast" [class.is-last]="isLast" [content]="sport" class="individual"></app-content-card>-->
+
 <h1>{{title}}</h1>
 <app-messages></app-messages>

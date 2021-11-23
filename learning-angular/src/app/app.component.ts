@@ -30,18 +30,18 @@ export class AppComponent implements OnInit {
     this.contentService.getContent().subscribe(sportService => this.sportContent = sportService);
   }
 
-  save(): void {
-    //Insert Message Service!!!
-    this.contentService.addContent(this.contentItem).subscribe(content => this.sportContent.push(content));
-  }
-
-  update(): void {
-    this.sportContent[this.contentItem.id || 1] = this.contentItem;
-    this.contentService.updateContent(this.contentItem).subscribe(() => {
-      console.log("Content Updated!")
-      //Insert Message Service!!!
-    })
-  }
+  // save(): void {
+  //   //Insert Message Service!!!
+  //   this.contentService.addContent(this.contentItem).subscribe(content => this.sportContent.push(content));
+  // }
+  //
+  // update(): void {
+  //   this.sportContent[this.contentItem.id || 1] = this.contentItem;
+  //   this.contentService.updateContent(this.contentItem).subscribe(() => {
+  //     console.log("Content Updated!")
+  //     //Insert Message Service!!!
+  //   })
+  // }
 
   CheckContent(input: string): void {
     for (let i = 0; i < this.sportContent.length; i++) {
