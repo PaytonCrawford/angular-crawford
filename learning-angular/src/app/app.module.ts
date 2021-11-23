@@ -15,6 +15,7 @@ import { HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import { InMemoryDataService } from "./services/in-memory-data.service";
 import { CreateComponent } from './create/create.component';
 import { FormsModule } from "@angular/forms";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import { FormsModule } from "@angular/forms";
           dataEncapsulation: false, delay: 2000
         }),
       FormsModule,
+      BrowserAnimationsModule,
     ],
   providers: [],
   bootstrap: [AppComponent]
