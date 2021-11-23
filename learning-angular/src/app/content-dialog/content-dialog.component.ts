@@ -15,11 +15,9 @@ export class ContentDialogComponent implements OnInit {
   @Output() addContentEvent = new EventEmitter<Content>();
   @Output() updateContentEvent = new EventEmitter<Content>();
   newContent: Content;
-  tempId!: string;
-  tempTags!: string;
   form!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private dialogRef: MatDialogRef<ContentDialogComponent>, private contentService: ContentService, private messageService: MessageService) {
+  constructor(private formBuilder: FormBuilder, private dialogRef: MatDialogRef<ContentDialogComponent>) {
     this.newContent = {
       author: '',
       title: '',

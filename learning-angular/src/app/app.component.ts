@@ -109,6 +109,7 @@ export class AppComponent implements OnInit {
 
     this.dialog.open(ContentDialogComponent, dialogConfig)
     const dialogRef = this.dialog.open(ContentDialogComponent, dialogConfig);
+
     dialogRef.afterClosed().subscribe(
       data => console.log("Dialog output:", data)
     );
