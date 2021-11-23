@@ -2,23 +2,24 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { ContentService } from "../services/content.service";
 import { MessageService } from "../services/message.service";
-
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
-  selector: 'app-create',
-  templateUrl: './create.component.html',
-  styleUrls: ['./create.component.scss']
+  selector: 'app-content-dialog',
+  templateUrl: './content-dialog.component.html',
+  styleUrls: ['./content-dialog.component.scss']
 })
-export class CreateComponent implements OnInit {
+export class ContentDialogComponent implements OnInit {
+
   @Output() addContentEvent = new EventEmitter<Content>();
   @Output() updateContentEvent = new EventEmitter<Content>();
   newContent: Content;
   tempId!: string;
   tempTags!: string;
+  form!: FormGroup;
 
-
-
-  constructor(private contentService: ContentService, private messageService: MessageService) {
+  constructor(private formBuilder: FormBuilder, private dialogRef: MatDialogRef<ContentDialogComponent>, private contentService: ContentService, private messageService: MessageService) {
     this.newContent = {
       author: '',
       title: '',
@@ -26,6 +27,7 @@ export class CreateComponent implements OnInit {
       type: '',
       tags: ['']
     };
+
   }
 
   ngOnInit(): void {
@@ -44,7 +46,12 @@ export class CreateComponent implements OnInit {
       };
       this.tempTags = "";
       this.addContentEvent.emit(newSport)
+      this.dialogRef.close(this.form.value);
     });
+  }
+
+  close() {
+    this.dialogRef.close();
   }
 
   updateSport(): void {

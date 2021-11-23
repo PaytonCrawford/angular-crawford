@@ -18,6 +18,8 @@ import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from "@angular/material/dialog";
+import { ContentDialogComponent } from './content-dialog/content-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,7 @@ import { MatInputModule } from '@angular/material/input';
     HoverStyleDirective,
     MessagesComponent,
     CreateComponent,
+    ContentDialogComponent,
   ],
     imports: [
         BrowserModule,
@@ -40,10 +43,13 @@ import { MatInputModule } from '@angular/material/input';
       FormsModule,
       BrowserAnimationsModule,
       MatButtonModule,
-      MatInputModule
+      MatInputModule,
+      MatDialogModule
     ],
   providers: [],
-  entryComponents: [],
+  entryComponents: [
+    ContentDialogComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
