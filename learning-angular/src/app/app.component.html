@@ -8,8 +8,8 @@
 <app-create></app-create>
 
 <!-- Display Sport Items -->
-<app-content-card *ngFor=" let sport of sportContent | filterContent: 'Team Sport'; last as isLast" [class.is-last]="isLast" class="team"></app-content-card>
-<app-content-card *ngFor=" let sport of sportContent | filterContent: 'Individual Sport'; last as isLast" [class.is-last]="isLast" class="individual"></app-content-card>
+<app-content-card *ngFor=" let sport of sportContent | filterContent: 'Team Sport'; last as isLast" [class.is-last]="isLast" [content]="sport" class="team"></app-content-card>
+<app-content-card *ngFor=" let sport of sportContent | filterContent: 'Individual Sport'; last as isLast" [class.is-last]="isLast" [content]="sport" class="individual"></app-content-card>
 
 <!-- Test Title -->
 <h1>{{title}}</h1>
