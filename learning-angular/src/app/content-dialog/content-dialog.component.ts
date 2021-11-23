@@ -33,42 +33,12 @@ export class ContentDialogComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addSport(): void {
-    this.newContent.tags = this.tempTags.split(",");
-    this.contentService.postContent(this.newContent).subscribe(newSport => {
-      this.messageService.add("Added sport content has the ID of: " + newSport.id);
-      this.newContent = {
-        author: '',
-        title: '',
-        body: '',
-        type: '',
-        tags: ['']
-      };
-      this.tempTags = "";
-      this.addContentEvent.emit(newSport)
-    });
-  }
-
   close() {
     this.dialogRef.close();
   }
 
-  updateSport(): void {
-    this.newContent.tags = this.tempTags.split(",");
-    this.newContent.id = parseInt(this.tempId);
-    this.contentService.postContent(this.newContent).subscribe(() => {
-      this.messageService.add("Updated sport content at id: " + this.newContent.id);
-      this.tempTags = "";
-      this.tempId = "";
-      this.updateContentEvent.emit(this.newContent);
-      this.newContent = {
-        author: '',
-        title: '',
-        body: '',
-        type: '',
-        tags: ['']
-      };
-    });
+  save() {
+    this.dialogRef.close(this.form.value);
   }
 
 }
