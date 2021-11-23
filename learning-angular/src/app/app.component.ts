@@ -112,7 +112,6 @@ export class AppComponent implements OnInit {
     dialogRef.afterClosed().subscribe(
       data => console.log("Dialog output:", data)
     );
-
   }
 
 }

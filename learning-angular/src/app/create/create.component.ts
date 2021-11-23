@@ -2,6 +2,8 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { ContentService } from "../services/content.service";
 import { MessageService } from "../services/message.service";
+import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+import {ContentDialogComponent} from "../content-dialog/content-dialog.component";
 
 
 @Component({
@@ -18,7 +20,7 @@ export class CreateComponent implements OnInit {
 
 
 
-  constructor(private contentService: ContentService, private messageService: MessageService) {
+  constructor(private dialog: MatDialog, private contentService: ContentService, private messageService: MessageService) {
     this.newContent = {
       author: '',
       title: '',
@@ -45,6 +47,16 @@ export class CreateComponent implements OnInit {
       this.tempTags = "";
       this.addContentEvent.emit(newSport)
     });
+
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(ContentDialogComponent, dialogConfig)
+    const dialogRef = this.dialog.open(ContentDialogComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(
+      data => console.log("Dialog output:", data)
+    );
   }
 
   updateSport(): void {
