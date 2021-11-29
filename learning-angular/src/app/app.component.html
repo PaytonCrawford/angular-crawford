@@ -11,6 +11,11 @@
 <app-content-card *ngFor=" let sport of sportContent | filterContent: 'Team Sport'; last as isLast" [class.is-last]="isLast" [content]="sport" class="team"></app-content-card>
 <app-content-card *ngFor=" let sport of sportContent | filterContent: 'Individual Sport'; last as isLast" [class.is-last]="isLast" [content]="sport" class="individual"></app-content-card>
 
+<!-- Router Outlet -->
+<a href="content">Content List</a><br>
+<a href="content/3">Content Test Item 3</a><br>
+<router-outlet></router-outlet>
+
 <!-- Test Title -->
 <h1>{{title}}</h1>
 

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule } from "@angular/router";
 import { AppComponent } from './app.component';
 import { ComponentComponent } from './component/component.component';
 import { PipePipe } from './pipe.pipe';
@@ -18,6 +18,8 @@ import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,8 @@ import { MatInputModule } from '@angular/material/input';
     HoverStyleDirective,
     MessagesComponent,
     CreateComponent,
+    ContentDetailComponent,
+    NotFoundComponent,
   ],
     imports: [
         BrowserModule,
@@ -40,7 +44,12 @@ import { MatInputModule } from '@angular/material/input';
       FormsModule,
       BrowserAnimationsModule,
       MatButtonModule,
-      MatInputModule
+      MatInputModule,
+      RouterModule.forRoot([
+        { path: 'content/:id', component: ContentDetailComponent },
+        { path: 'content', component: ContentListComponent },
+        { path: '**', component: NotFoundComponent },
+      ])
     ],
   providers: [],
   entryComponents: [],
