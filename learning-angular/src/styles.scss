@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @use '~@angular/material' as mat;
 @include mat.core();
-//@import '~@angular/material/theming';
 
 //Imports and Themes
 $my-sport-theme-primary: mat.define-palette(mat.$amber-palette, 500);
@@ -15,5 +14,5 @@ color: (
 )
 ));
 @include mat.all-component-themes($my-theme);
-@include mat.core-theme($my-theme);
-@include mat.button-theme($my-theme);
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
