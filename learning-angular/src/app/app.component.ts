@@ -3,6 +3,10 @@ import {ContentCardComponent} from "./content-card/content-card.component";
 import { Content } from "./helper-files/content-interface"
 import { ContentService } from './services/content.service';
 import {MessageService} from "./services/message.service";
+import {RouterModule} from "@angular/router";
+import {ContentDetailComponent} from "./content-detail/content-detail.component";
+import {ContentListComponent} from "./content-list/content-list.component";
+import {NotFoundComponent} from "./not-found/not-found.component";
 
 @Component({
   selector: 'app-root',
@@ -32,6 +36,11 @@ export class AppComponent implements OnInit {
       type: '',
       tags: ['']
     };
+    RouterModule.forRoot([
+      { path: 'content/:id', component: ContentDetailComponent },
+      { path: 'content', component: ContentListComponent },
+      { path: '**', component: NotFoundComponent },
+    ])
   }
 
   public ngOnInit() {
