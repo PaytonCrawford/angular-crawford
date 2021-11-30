@@ -20,6 +20,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { ContentDetailComponent } from './content-detail/content-detail.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +51,13 @@ import { NotFoundComponent } from './not-found/not-found.component';
         { path: 'content/:id', component: ContentDetailComponent },
         { path: 'content', component: ContentListComponent },
         { path: '**', component: NotFoundComponent },
-      ])
+      ]),
+      ServiceWorkerModule.register('ngsw-worker.js', {
+        enabled: environment.production,
+        // Register the ServiceWorker as soon as the app is stable
+        // or after 30 seconds (whichever comes first).
+        registrationStrategy: 'registerWhenStable:30000'
+      })
     ],
   providers: [],
   entryComponents: [],
