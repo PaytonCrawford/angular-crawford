@@ -39,7 +39,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
         BrowserModule,
         HttpClientModule,
         HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
-          dataEncapsulation: false, delay: 800
+          dataEncapsulation: false, delay: 400
         }),
       FormsModule,
       BrowserAnimationsModule,
