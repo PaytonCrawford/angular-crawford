@@ -20,13 +20,11 @@ export class ContentDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.id = Number(params.get("id"));
-
-      this.contentService.getContentItem(this.id).subscribe(
+      console.log(this.id);
+      this.contentService.getContentItem(this.id).subscribe (
         c => {
-          this.content = c;
-          console.log(this.content);
+          this.content = c; console.log(this.content);
         });
-
     });
   }
 

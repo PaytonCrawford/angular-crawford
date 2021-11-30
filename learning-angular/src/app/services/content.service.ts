@@ -9,15 +9,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ContentService {
 
-  contentItem = {
-    id: 7,
-    author: "TEST ITEM",
-    title: "TEST ITEM",
-    type: "TEST ITEM",
-    body: "TEST ITEM",
-    tags: ["TEST ITEM", "TEST ITEM"]
-  }
-
   constructor(private messageService: MessageService, private http: HttpClient) {
 
   }
@@ -33,7 +24,7 @@ export class ContentService {
 
   getContentItem(id: number): Observable<Content> {
     console.log("Retrieving OBSERVABLE content item");
-    return this.http.get<Content>("api/content/" + id);
+    return this.http.get<Content>("api/CONTENT/" + id);
   }
 
   postContent(newContent: Content): Observable<Content>{
