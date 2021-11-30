@@ -1,20 +1,15 @@
 <!-- Check For Sport Type -->
-<input #sportType><button (click)="CheckContent(sportType.value)">Check Content</button>
+<input #sportType><button (click)="CheckContent(sportType.value)">Check Content</button><br>
 
 <!-- Create Sport Item -->
-<app-create></app-create>
+<app-create></app-create><br>
 
 <!-- Display Sport Items -->
-<app-content-card *ngFor=" let sport of sportContent | filterContent: 'Team Sport'; last as isLast" [class.is-last]="isLast" [content]="sport" class="team"></app-content-card>
-<app-content-card *ngFor=" let sport of sportContent | filterContent: 'Individual Sport'; last as isLast" [class.is-last]="isLast" [content]="sport" class="individual"></app-content-card>
+<app-content-list></app-content-list><br>
 
 <!-- Router Outlet -->
-<a href="content">Content List</a><br>
-<a href="content/3">Content Test Item 3</a><br>
+<a routerLink="content" routerLinkActive="active">Content List</a>
 <router-outlet></router-outlet>
-
-<!-- Test Title -->
-<h1>{{title}}</h1>
 
 <!-- Display Sport Messages -->
 <app-messages></app-messages>

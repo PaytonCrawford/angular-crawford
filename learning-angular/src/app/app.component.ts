@@ -36,11 +36,6 @@ export class AppComponent implements OnInit {
       type: '',
       tags: ['']
     };
-    RouterModule.forRoot([
-      { path: 'content/:id', component: ContentDetailComponent },
-      { path: 'content', component: ContentListComponent },
-      { path: '**', component: NotFoundComponent },
-    ])
   }
 
   public ngOnInit() {
