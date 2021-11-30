@@ -2,11 +2,13 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ContentCardComponent} from "./content-card/content-card.component";
 import { Content } from "./helper-files/content-interface"
 import { ContentService } from './services/content.service';
-import {MessageService} from "./services/message.service";
+import { MessageService } from "./services/message.service";
 import {RouterModule} from "@angular/router";
 import {ContentDetailComponent} from "./content-detail/content-detail.component";
 import {ContentListComponent} from "./content-list/content-list.component";
 import {NotFoundComponent} from "./not-found/not-found.component";
+import {SwUpdate} from "@angular/service-worker";
+import { CheckUpdateService } from "./check-update.service";
 
 @Component({
   selector: 'app-root',
@@ -28,7 +30,7 @@ export class AppComponent implements OnInit {
     tags: ["TEST ITEM", "TEST ITEM"]
   }
 
-  constructor(private contentService: ContentService, private messageService: MessageService) {
+  constructor(private logService: CheckUpdateService, private contentService: ContentService, private messageService: MessageService) {
     this.newContent = {
       author: '',
       title: '',
